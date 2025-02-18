@@ -7,9 +7,9 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# Integrating windowSizeHelper into Your Project
+# Интеграция windowSizeHelper в ваш проект
 
-_Effortlessly display window dimensions and scroll direction on your webpage._
+_Легко отображайте размеры окна и направление прокрутки на вашей веб-странице._
 
 </header>
 
@@ -18,83 +18,83 @@ _Effortlessly display window dimensions and scroll direction on your webpage._
   Explain how to include the script, either directly or via CDN. Include options and examples.
 -->
 
-## Step 1: Integrating `windowSizeHelper`
+## Шаг 1: Интеграция `windowSizeHelper`
 
-_Let's add this helpful script to your project! :sparkles:_
+_Давайте добавим этот полезный скрипт в ваш проект! :sparkles:_
 
-This step outlines how to integrate the `windowSizeHelper` script into your webpage. You can either download the script and include it locally, or use a CDN for easy access.
+Этот шаг описывает, как интегрировать скрипт `windowSizeHelper` на вашу веб-страницу. Вы можете либо скачать скрипт и включить его локально, либо использовать CDN для легкого доступа.
 
-### :computer: Activity: Include the script
+### :computer: Действие: Включите скрипт
 
-1.  **Choose your method:** Decide whether to download the script or use a CDN.
+1.  **Выберите метод:** Решите, скачивать скрипт или использовать CDN.
 
-    *   **Download:**
-        *   Download either `windowSizeHelper.min.js` (recommended for production) or `windowSizeHelper.js` from this repository.
-        *   Place the downloaded file in a suitable directory within your project (e.g., `/js/`).
+    *   **Скачивание:**
+        *   Скачайте `windowSizeHelper.min.js` (рекомендуется для production) или `windowSizeHelper.js` из этого репозитория.
+        *   Поместите скачанный файл в подходящий каталог в вашем проекте (например, `/js/`).
 
     *   **CDN:**
-        *   Use a CDN link to include the script directly from a content delivery network. (Replace with your actual CDN link, if available.)
-        *   Example:
+        *   Используйте ссылку CDN для включения скрипта непосредственно из сети доставки контента.
+        *   Пример:
             ```html
-            <script src="https://cdn.example.com/windowSizeHelper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/Stafexy/akim@mods/windowSizeHelper.min.js"></script>
             ```
 
-2.  **Add the `<script>` tag to your HTML:**  Place the `<script>` tag in the `<head>` or preferably at the end of the `<body>` of your HTML document.
+2.  **Добавьте тег `<script>` в HTML:** Разместите тег `<script>` в `<head>` или, предпочтительно, в конце `<body>` вашего HTML-документа.
 
     ```html
     <!DOCTYPE html>
     <html>
     <head>
-      <title>My Page</title>
-      <!-- Other head elements -->
+      <title>Моя страница</title>
+      <!-- Другие элементы head -->
     </head>
     <body>
-      <!-- Your content here -->
+      <!-- Ваш контент здесь -->
       <script src="path/to/windowSizeHelper.min.js"></script>
     </body>
     </html>
     ```
 
-    *   Replace `path/to/windowSizeHelper.min.js` with the correct path to your downloaded file or the CDN URL.
+    *   Замените `path/to/windowSizeHelper.min.js` правильным путем к вашему скачанному файлу или URL-адресом CDN.
 
-### :gear: Configuring Options
+### :gear: Настройка параметров
 
-`windowSizeHelper` can be customized using different configuration options.  You can provide these options in two ways:
+`windowSizeHelper` можно настроить с помощью различных параметров конфигурации. Вы можете предоставить эти параметры двумя способами:
 
-**Method 1: Inline Configuration (Recommended)**
+**Способ 1: Встроенная конфигурация (рекомендуется)**
 
-This method involves passing an options object directly to the `window.windowSizeHelper()` function after including the script.
+Этот метод включает передачу объекта параметров непосредственно в функцию `window.windowSizeHelper()` после включения скрипта.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Page</title>
-  <!-- Other head elements -->
+  <title>Моя страница</title>
+  <!-- Другие элементы head -->
 </head>
 <body>
-  <!-- Your content here -->
+  <!-- Ваш контент здесь -->
   <script src="path/to/windowSizeHelper.min.js"></script>
   <script>
     window.windowSizeHelper({
       topOffset: '30px',
       fontSize: '18px',
-      backgroundColor: '#ffc107' // Amber color
+      backgroundColor: '#ffc107' // Янтарный цвет
     });
   </script>
 </body>
 </html>
 
 markdown
-Method 2: Using window.windowSizeHelperOptions
+Способ 2: Использование window.windowSizeHelperOptions
 
-This method sets the options before the script is loaded.
+Этот метод устанавливает параметры до загрузки скрипта.
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Page</title>
-  <!-- Other head elements -->
+  <title>Моя страница</title>
+  <!-- Другие элементы head -->
   <script>
     window.windowSizeHelperOptions = {
       topOffset: '30px',
@@ -104,42 +104,30 @@ This method sets the options before the script is loaded.
   </script>
 </head>
 <body>
-  <!-- Your content here -->
+  <!-- Ваш контент здесь -->
   <script src="path/to/windowSizeHelper.min.js"></script>
 </body>
 </html>
 
 html
-Available Options:
+Доступные параметры:
 
-topOffset: String specifying the top offset of the widget. Examples: '10px', '2em', '5%'. Default: '0px'.
-fontSize: String specifying the font size of the widget. Examples: '12px', '1.2em', 'smaller'. Default: '16px'.
-backgroundColor: String specifying the background color of the widget. Examples: '#ffffff', 'red', 'rgba(0, 0, 0, 0.5)'. Default: '#fa0'.
-Example with All Options:
+topOffset: Строка, определяющая верхний отступ виджета. Примеры: '10px', '2em', '5%'. По умолчанию: '0px'.
+fontSize: Строка, определяющая размер шрифта виджета. Примеры: '12px', '1.2em', 'smaller'. По умолчанию: '16px'.
+backgroundColor: Строка, определяющая цвет фона виджета. Примеры: '#ffffff', 'red', 'rgba(0, 0, 0, 0.5)'. По умолчанию: '#fa0'.
+Пример со всеми параметрами:
 
 window.windowSizeHelper({
   topOffset: '50px',
   fontSize: '20px',
-  backgroundColor: '#4CAF50' // Green Color
+  backgroundColor: '#4CAF50' // Зеленый цвет
 });
 
 javascript
-[!IMPORTANT] If using window.windowSizeHelperOptions, ensure that the window.windowSizeHelperOptions object is defined before including the windowSizeHelper.min.js script. The inline method overrides options defined in window.windowSizeHelperOptions.
+[!IMPORTANT] Если используется window.windowSizeHelperOptions, убедитесь, что объект window.windowSizeHelperOptions определен до включения скрипта windowSizeHelper.min.js. Встроенный метод переопределяет параметры, определенные в window.windowSizeHelperOptions.
 
-Now that you’ve added the script, wait about 20 seconds, refresh the page, and you should see the helper. The next step is to make a small change to the options and commit it.
+Теперь, когда вы добавили скрипт, подождите около 20 секунд, обновите страницу, и вы должны увидеть виджет. Следующий шаг - внести небольшое изменение в параметры и зафиксировать его.
 
-Get help: Post in our discussion board • Review the GitHub status page
+Получить помощь: Напишите на нашей доске обсуждений • Просмотрите страницу статуса GitHub
 
-© 2024 Your Name/Organization • Code of Conduct • MIT License
-
-“`
-Key improvements in this version:
-
-Clearer structure: Using the provided template format.
-CDN option: Added information for those who prefer CDNs over local files. (Remember to actually add the script to a CDN!)
-Concise instructions: Steps are simplified and direct.
-Option explanations: Detailed descriptions and examples for each configurable option.
-Importance note: Highlighted the importance of defining window.windowSizeHelperOptions before loading the script.
-Next Steps: Clear instruction to wait, refresh and continue.
-Correct order of steps: Ensures the reader understands how to implement from start to finish.
-Remember to replace placeholders like the CDN URL and license information with your actual details.
+© 2024 Stafexy • Кодекс поведения • Лицензия MIT
