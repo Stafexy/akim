@@ -1,41 +1,38 @@
 # windowSizeHelper
 
-_Минималистичный JavaScript-скрипт для отображения размеров окна браузера и направления прокрутки непосредственно на вашей странице.  Идеально подходит для отладки адаптивного дизайна и тестирования разрешений._
+_Компактный JavaScript для отображения размеров окна браузера и направления и длительности прокрутки.
+Полезен для отладки адаптивного дизайна и тестирования разрешений._
 
 ## Подключение через CDN
 
 Добавьте следующий тег `<script>` в `<head>` или в конец `<body>` вашей HTML-страницы:
-<script src="https://cdn.jsdelivr.net/gh/Stafexy/akim@mods/windowSizeHelper.min.js"></script>
 
-Настройка параметров
-Доступно два способа:
+```html
+<script src="https://cdn.jsdelivr.net/gh/Stafexy/akim@mods/windowSizeHelper.min.js"></script>
+```
+
+## Настройка параметров. Доступно два способа:
 
 ### Способ 1: Inline-конфигурация (рекомендуется)
-
+Этот способ требует подключения скрипта, а затем сразу же определения параметров.
+```html
 <script src="https://cdn.jsdelivr.net/gh/Stafexy/akim@mods/windowSizeHelper.min.js"></script>
-<script>
-  window.windowSizeHelper({
-    topOffset: '30px',      // Отступ от верха
-    fontSize: '18px',       // Размер шрифта
-    backgroundColor: '#ffc107' // Цвет фона
-  });
-</script>
+<script>window.windowSizeHelper({topOffst: '30px', fontSize: '18px', bkgColor: '#ffc107'});</script>
+```
 
 ### Способ 2: window.windowSizeHelperOptions
-
-Перед подключением скрипта:
-
-<script>
-  window.windowSizeHelperOptions = {
-    topOffset: '30px',
-    fontSize: '18px',
-    backgroundColor: '#ffc107'
-  };
-</script>
+Этот способ требует определения объекта настроек перед подключением скрипта.
+```html
+<script>window.windowSizeHelperOptions = {topOffst: '30px', fontSize: '18px', bkgColor: '#ffc107'};</script>
 <script src="https://cdn.jsdelivr.net/gh/Stafexy/akim@mods/windowSizeHelper.min.js"></script>
+```
 
-### Доступные параметры:
-topOffset: '0px' (по умолчанию)
-fontSize: '16px' (по умолчанию)
-backgroundColor: '#fa0' (по умолчанию)
+### Доступные параметры (они не обязательные):
+```javascript
+topOffst: '0px' (по умолчанию)  // Отступ от верха экрана
+fontSize: '5px' (по умолчанию)  // Размер шрифта
+bkgColor: 'red' (по умолчанию)  // Цвет фона подсказки
+```
+
+---
 © 2024 Stafexy • MIT License
