@@ -7,68 +7,80 @@
   Add your open source license, GitHub uses MIT license.
 -->
 
-# Introduction to GitHub
+# Integrating windowSizeHelper into Your Project
 
-_Get started using GitHub in less than an hour._
+_Effortlessly display window dimensions and scroll direction on your webpage._
 
 </header>
 
 <!--
-  <<< Author notes: Step 3 >>>
-  Just a historic note: the previous version of this step forced the learner
-  to write a pull request description,
-  checked that `main` was the receiving branch,
-  and that the file was named correctly.
+  <<< Author notes: Step 1 >>>
+  Explain how to include the script, either directly or via CDN. Include options and examples.
 -->
 
-## Step 3: Open a pull request
+## Step 1: Integrating `windowSizeHelper`
 
-_Nice work making that commit! :sparkles:_
+_Let's add this helpful script to your project! :sparkles:_
 
-Now that you have made a change to the project and created a commit, it’s time to share your proposed change through a pull request!
+This step outlines how to integrate the `windowSizeHelper` script into your webpage. You can either download the script and include it locally, or use a CDN for easy access.
 
-**What is a pull request?**: Collaboration happens on a _[pull request](https://docs.github.com/en/get-started/quickstart/github-glossary#pull-request)_. The pull request shows the changes in your branch to other people and allows people to accept, reject, or suggest additional changes to your branch. In a side by side comparison, this pull request is going to keep the changes you just made on your branch and propose applying them to the `main` project branch. For more information about pull requests, see "[About pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)".
+### :computer: Activity: Include the script
 
-### :keyboard: Activity: Create a pull request
+1.  **Choose your method:** Decide whether to download the script or use a CDN.
 
-You may have noticed after your commit that a message displayed indicating your recent push to your branch and providing a button that says **Compare & pull request**.
+    *   **Download:**
+        *   Download either `windowSizeHelper.min.js` (recommended for production) or `windowSizeHelper.js` from this repository.
+        *   Place the downloaded file in a suitable directory within your project (e.g., `/js/`).
 
-![screenshot of message and button](../../images/compare-and-pull-request.png)
+    *   **CDN:**
+        *   Use a CDN link to include the script directly from a content delivery network. (Replace with your actual CDN link, if available.)
+        *   Example:
+            ```html
+            <script src="https://cdn.example.com/windowSizeHelper.min.js"></script>
+            ```
 
-To create a pull request automatically, click **Compare & pull request**, and then skip to step 6 below. If you don't click the button, the instructions below walk you through manually setting up the pull request.
+2.  **Add the `<script>` tag to your HTML:**  Place the `<script>` tag in the `<head>` or preferably at the end of the `<body>` of your HTML document.
 
-1. Click on the **Pull requests** tab in the header menu of your repository.
-2. Click **New pull request**.
-3. In the **base:** dropdown, make sure **main** is selected.
-4. Select the **compare:** dropdown, and click `my-first-branch`.
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>My Page</title>
+      <!-- Other head elements -->
+    </head>
+    <body>
+      <!-- Your content here -->
+      <script src="path/to/windowSizeHelper.min.js"></script>
+    </body>
+    </html>
+    ```
 
-   ![screenshot showing both branch selections](../../images/pull-request-branches.png)
+    *   Replace `path/to/windowSizeHelper.min.js` with the correct path to your downloaded file or the CDN URL.
 
-5. Click **Create pull request**.
-6. Enter a title for your pull request. By default, the title will automatically be the name of your branch. For this exercise, let's edit the field to say `Add my first file`.
-7. The next field helps you provide a description of the changes you made. Here, you can add a description of what you’ve accomplished so far. As a reminder, you have: created a new branch, created a file, and made a commit.
+### :gear: Configuring Options
 
-   ![screenshot showing pull request](../../images/Pull-request-description.png)
+`windowSizeHelper` can be customized using different configuration options.  You can provide these options in two ways:
 
-8. Click **Create pull request**. You will automatically be navigated to your new pull request.
-9. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
+**Method 1: Inline Configuration (Recommended)**
 
-> [!NOTE]
-> You may see evidence of GitHub Actions running on the tab with the pull request opened! The image below shows a line you might see on your pull request after the Action finishes running.
-> 
-> ![screenshot of an example of an actions line](../../images/Actions-to-step-4.png)
+This method involves passing an options object directly to the `window.windowSizeHelper()` function after including the script.
 
-<footer>
-
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
-
----
-
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/introduction-to-github) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2024 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+  <!-- Other head elements -->
+</head>
+<body>
+  <!-- Your content here -->
+  <script src="path/to/windowSizeHelper.min.js"></script>
+  <script>
+    window.windowSizeHelper({
+      topOffset: '30px',
+      fontSize: '18px',
+      backgroundColor: '#ffc107' // Amber color
+    });
+  </script>
+</body>
+</html>
