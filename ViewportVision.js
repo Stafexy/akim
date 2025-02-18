@@ -5,7 +5,7 @@
     fontSize: '16px',
     backgroundColor: '#fa0',
   };
-
+console.log('Скрипт запущен!');
   // Функция для объединения настроек пользователя с настройками по умолчанию
   function extendOptions(userOptions) {const options = {};for (const key in defaultOptions) {options[key] = (userOptions && userOptions[key]) !== undefined ? userOptions[key] : defaultOptions[key];}return options;}
 
