@@ -84,3 +84,62 @@ This method involves passing an options object directly to the `window.windowSiz
   </script>
 </body>
 </html>
+
+markdown
+Method 2: Using window.windowSizeHelperOptions
+
+This method sets the options before the script is loaded.
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page</title>
+  <!-- Other head elements -->
+  <script>
+    window.windowSizeHelperOptions = {
+      topOffset: '30px',
+      fontSize: '18px',
+      backgroundColor: '#ffc107'
+    };
+  </script>
+</head>
+<body>
+  <!-- Your content here -->
+  <script src="path/to/windowSizeHelper.min.js"></script>
+</body>
+</html>
+
+html
+Available Options:
+
+topOffset: String specifying the top offset of the widget. Examples: '10px', '2em', '5%'. Default: '0px'.
+fontSize: String specifying the font size of the widget. Examples: '12px', '1.2em', 'smaller'. Default: '16px'.
+backgroundColor: String specifying the background color of the widget. Examples: '#ffffff', 'red', 'rgba(0, 0, 0, 0.5)'. Default: '#fa0'.
+Example with All Options:
+
+window.windowSizeHelper({
+  topOffset: '50px',
+  fontSize: '20px',
+  backgroundColor: '#4CAF50' // Green Color
+});
+
+javascript
+[!IMPORTANT] If using window.windowSizeHelperOptions, ensure that the window.windowSizeHelperOptions object is defined before including the windowSizeHelper.min.js script. The inline method overrides options defined in window.windowSizeHelperOptions.
+
+Now that you’ve added the script, wait about 20 seconds, refresh the page, and you should see the helper. The next step is to make a small change to the options and commit it.
+
+Get help: Post in our discussion board • Review the GitHub status page
+
+© 2024 Your Name/Organization • Code of Conduct • MIT License
+
+“`
+Key improvements in this version:
+
+Clearer structure: Using the provided template format.
+CDN option: Added information for those who prefer CDNs over local files. (Remember to actually add the script to a CDN!)
+Concise instructions: Steps are simplified and direct.
+Option explanations: Detailed descriptions and examples for each configurable option.
+Importance note: Highlighted the importance of defining window.windowSizeHelperOptions before loading the script.
+Next Steps: Clear instruction to wait, refresh and continue.
+Correct order of steps: Ensures the reader understands how to implement from start to finish.
+Remember to replace placeholders like the CDN URL and license information with your actual details.
